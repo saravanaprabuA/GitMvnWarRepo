@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('build') {
+            steps {
+				      echo "Build stage completed";
+			      }
+        }
+        stage('test') {
+            steps {
+				      echo "Test stage completed";
+			      }
+        }
+        stage('deploy') {
+            steps {
+				      echo "Deploy stage completed";
+			      }
+        }
+    }
+	post {
+		always {
+			echo "This always run";
+		}
+		success {
+			echo "This is success";
+		}
+		failure {
+			echo "This is failure";
+		}
+		unstable {
+			echo "This is unstable";
+		}
+		changed {
+			echo "This is changed";
+		}
+	}
+}
