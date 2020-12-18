@@ -23,7 +23,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-		deploy adapters: [tomcat9(credentialsId: 'bd30a2d1-e69e-4dbb-a3f4-3a4b07d8c836', path: '', url: 'http://localhost:8081')], contextPath: 'DeclaretivePipelineTest', war: '**/*.war'
+		deploy adapters: [tomcat9(credentialsId: 'bd30a2d1-e69e-4dbb-a3f4-3a4b07d8c836', path: '', url: 'http://localhost:8081')], contextPath: 'DeclaretiveScriptApp', war: '**/*.war'
 	    }
         }
     }
